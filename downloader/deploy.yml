@@ -6,7 +6,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      project: scrapper
+      project: downloader
   minReadySeconds: 20
   strategy:
     type: RollingUpdate
@@ -21,4 +21,7 @@ spec:
       containers:
         - name: downloader
           imagePullPolicy: Always
-          image: mahdimehrabi/rb-downloader:v1
+          image: mahdimehrabi/rb-downloader:v5
+          envFrom:
+            - configMapRef:
+                name: downloaderenv
