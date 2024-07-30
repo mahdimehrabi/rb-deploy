@@ -23,4 +23,7 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
-          image: mahdimehrabi/rb-scrapper:v1
+          image: mahdimehrabi/rb-scrapper:v3
+          envFrom:
+            - configMapRef:
+                name: scrapenv
