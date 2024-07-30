@@ -1,0 +1,51 @@
+# Kubernetes related files
+*.kubeconfig
+*.kube
+*.yaml
+
+# Ignore Helm releases and chart artifacts
+charts/
+releases/
+*.tgz
+
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Ignore Ansible temporary files
+*.retry
+
+# Ignore common IDE files
+.idea/
+.vscode/
+*.swp
+*~
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+*.bak
+*.out
+
+# Ignore secret and configuration files (these should be handled securely)
+secrets.yaml
+config.yaml
+*.enc
+
+# Ignore any .env files
+.env
+
+# Ignore node_modules if using JavaScript-based tools
+node_modules/
+
+# Ignore Python virtual environments if using Python-based tools
+venv/
+__pycache__/
+
+# Ignore Docker build artifacts
+Dockerfile
+docker-compose.yml
