@@ -1,0 +1,19 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: scrapper-hr
+spec:
+  parentRefs:
+    - group: gateway.networking.k8s.io
+      name: gateway
+      kind: Gateway
+  hostnames:
+    - scrapper.mk8-cluster.linuz.ir
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: rb-scrapper-svc
+          port: 80
